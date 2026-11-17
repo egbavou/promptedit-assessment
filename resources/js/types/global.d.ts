@@ -20,6 +20,12 @@ declare module '@inertiajs/core' {
             name: string;
             auth: Auth;
             sidebarOpen: boolean;
+            balance: {
+                available: string;
+                reserved: string;
+                available_nanodollars: number;
+            } | null;
+            flash: { success: string | null };
             [key: string]: unknown;
         };
     }

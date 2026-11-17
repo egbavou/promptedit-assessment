@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import BalanceHeader from '@/components/BalanceHeader.vue';
 import AppContent from '@/components/AppContent.vue';
 import AppHeader from '@/components/AppHeader.vue';
 import AppShell from '@/components/AppShell.vue';
@@ -17,6 +18,7 @@ withDefaults(defineProps<Props>(), {
 <template>
     <AppShell variant="header">
         <AppHeader :breadcrumbs="breadcrumbs" />
+        <BalanceHeader />
         <AppContent variant="header">
             <slot />
         </AppContent>

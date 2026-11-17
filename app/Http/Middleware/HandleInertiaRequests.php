@@ -1,7 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Middleware;
 
+use App\Billing\Ledger;
+use App\Support\Usd;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 
@@ -37,9 +41,26 @@ class HandleInertiaRequests extends Middleware
     {
         return [
             ...parent::share($request),
+            'balance' => function () use ($request): ?array {
+                $user = $request->user();
+                if ($user === null) {
+                    return null;
+                }
+                $ledger = app(Ledger::class);
+                $available = $ledger->available($user);
+
+                return [
+                    'available' => Usd::display($available),
+                    'reserved' => Usd::display($ledger->reserved($user)),
+                    'available_nanodollars' => $available,
+                ];
+            },
             'name' => config('app.name'),
             'auth' => [
                 'user' => $request->user(),
+            ],
+            'flash' => [
+                'success' => fn () => $request->session()->get('success'),
             ],
             'sidebarOpen' => ! $request->hasCookie('sidebar_state') || $request->cookie('sidebar_state') === 'true',
         ];
