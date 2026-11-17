@@ -2,6 +2,8 @@
 
 namespace Tests\Feature\Auth;
 
+use App\Models\User;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Fortify\Features;
 use Tests\TestCase;
@@ -35,5 +37,12 @@ class RegistrationTest extends TestCase
 
         $this->assertAuthenticated();
         $response->assertRedirect(route('dashboard', absolute: false));
+    }
+
+    public function test_email_verification_is_disabled(): void
+    {
+        $this->assertFalse(Features::enabled(Features::emailVerification()));
+        $this->assertNotInstanceOf(MustVerifyEmail::class, new User);
+        $this->get('/email/verify')->assertNotFound();
     }
 }

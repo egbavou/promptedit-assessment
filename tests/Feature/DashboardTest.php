@@ -18,9 +18,9 @@ class DashboardTest extends TestCase
         $response->assertRedirect(route('login'));
     }
 
-    public function test_authenticated_users_are_redirected_to_generations(): void
+    public function test_unverified_authenticated_users_are_redirected_to_generations(): void
     {
-        $user = User::factory()->create();
+        $user = User::factory()->unverified()->create();
         $this->actingAs($user);
 
         $response = $this->get(route('dashboard'));

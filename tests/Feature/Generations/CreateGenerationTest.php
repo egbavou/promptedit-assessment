@@ -14,7 +14,9 @@ use App\Models\Generation;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Queue;
+use Illuminate\Support\Str;
 use Inertia\Testing\AssertableInertia;
 use PHPUnit\Framework\Attributes\DataProvider;
 use RuntimeException;
@@ -266,13 +268,41 @@ class CreateGenerationTest extends GenerationTestCase
         Queue::assertNothingPushed();
     }
 
-    public function test_unverified_users_cannot_create(): void
+    public function test_a_newly_registered_user_can_buy_credits_and_create_without_verifying_email(): void
     {
-        $this->actingAs(User::factory()->unverified()->create());
+        Notification::fake();
 
-        $this->post(route('generations.store'), $this->payload())->assertRedirect(route('verification.notice'));
-        $this->assertDatabaseCount('generations', 0);
-        Queue::assertNothingPushed();
+        $this->post(route('register.store'), [
+            'name' => 'Reviewer',
+            'email' => 'reviewer@example.com',
+            'password' => 'password',
+            'password_confirmation' => 'password',
+        ])->assertSessionHasNoErrors()->assertRedirect(route('dashboard', absolute: false));
+
+        $user = User::query()->sole();
+        $this->assertAuthenticatedAs($user);
+        $this->assertNull($user->email_verified_at);
+        Notification::assertNothingSent();
+
+        $this->get(route('dashboard'))->assertRedirect(route('generations.index'));
+        $this->get('/generations')->assertOk()
+            ->assertInertia(fn (AssertableInertia $page) => $page->component('Generations/Index'));
+
+        $this->from(route('generations.index'))->post(route('credits.purchase'), [
+            'idempotency_key' => (string) Str::uuid(),
+        ])->assertSessionHasNoErrors()->assertRedirect(route('generations.index'));
+        $this->assertSame(5_000_000_000, app(Ledger::class)->available($user));
+
+        $this->post(route('generations.store'), $this->payload())
+            ->assertSessionHasNoErrors()->assertRedirect(route('generations.index'));
+
+        $generation = Generation::query()->sole();
+        $this->assertSame($user->id, $generation->user_id);
+        $this->assertSame(GenerationStatus::Pending, $generation->status);
+        $this->assertSame(4_913_500_000, app(Ledger::class)->available($user));
+        $this->assertDatabaseCount('ledger_entries', 2);
+        Queue::assertPushed(SubmitGeneration::class, fn (SubmitGeneration $job): bool => $job->generationId === $generation->id);
+        $this->assertNull($user->refresh()->email_verified_at);
     }
 
     public function test_unavailable_pricing_creates_nothing(): void

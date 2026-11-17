@@ -96,11 +96,17 @@ class GenerationImageTest extends TestCase
         $this->get(route('generations.image', $generation))->assertRedirect(route('login'));
     }
 
-    public function test_an_unverified_user_is_redirected_to_verification(): void
+    public function test_an_unverified_owner_can_stream_their_image(): void
     {
-        $generation = Generation::factory()->for(User::factory()->unverified())->succeeded()->create();
+        $generation = Generation::factory()->for(User::factory()->unverified())->succeeded()->create([
+            'image_path' => 'generations/image.png',
+        ]);
+        Storage::disk('images')->put($generation->image_path, 'private image bytes');
 
-        $this->actingAs($generation->user)->get(route('generations.image', $generation))->assertRedirect(route('verification.notice'));
+        $response = $this->actingAs($generation->user)->get(route('generations.image', $generation));
+
+        $response->assertOk();
+        $this->assertSame('private image bytes', $response->streamedContent());
     }
 
     #[DataProvider('missingCopies')]

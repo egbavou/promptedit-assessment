@@ -118,11 +118,11 @@ class EstimateTest extends GenerationTestCase
         Http::assertNothingSent();
     }
 
-    public function test_unverified_users_cannot_estimate(): void
+    public function test_unverified_users_can_estimate(): void
     {
         $this->actingAs(User::factory()->unverified()->create());
 
-        $this->postJson(route('generations.estimate'), $this->payload())->assertForbidden();
-        Http::assertNothingSent();
+        $this->postJson(route('generations.estimate'), $this->payload())->assertOk()
+            ->assertJsonPath('max_nanodollars', 86_500_000)->assertJsonPath('can_afford', false);
     }
 }

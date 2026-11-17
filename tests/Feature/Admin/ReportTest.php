@@ -29,8 +29,17 @@ class ReportTest extends PixelforgeTestCase
     {
         $this->get('/admin/report')->assertRedirect(route('login'));
         $this->actingAs(User::factory()->create())->get('/admin/report')->assertForbidden();
-        $this->actingAs(User::factory()->admin()->unverified()->create())->get('/admin/report')->assertRedirect(route('verification.notice'));
+        $this->actingAs(User::factory()->unverified()->create())->get('/admin/report')->assertForbidden();
         Http::assertNothingSent();
+    }
+
+    public function test_an_unverified_admin_can_open_the_report(): void
+    {
+        Http::fake([self::BASE_URL.'/usage*' => Http::response(self::fixture('usage'))]);
+
+        $this->actingAs(User::factory()->admin()->unverified()->create())
+            ->get(route('admin.report', ['start' => '2026-11-01', 'end' => '2026-11-02']))
+            ->assertOk()->assertInertia(fn (Assert $page) => $page->component('Admin/Report'));
     }
 
     public function test_admin_sees_the_report_and_correct_usage_query_is_cached_for_five_minutes(): void

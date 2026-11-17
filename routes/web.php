@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::inertia('/', 'Welcome')->name('home');
 
-Route::middleware(['auth', 'verified'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('admin/report', ReportController::class)->middleware('admin')->name('admin.report');
     Route::get('dashboard', fn () => to_route('generations.index'))->name('dashboard');
     Route::get('generations', [GenerationController::class, 'index'])->name('generations.index');
