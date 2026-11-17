@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
 
     /*
@@ -15,6 +17,8 @@ return [
 
     'default' => env('FILESYSTEM_DISK', 'local'),
 
+    'images_disk' => env('IMAGES_DISK', 'images'),
+
     /*
     |--------------------------------------------------------------------------
     | Filesystem Disks
@@ -29,6 +33,13 @@ return [
     */
 
     'disks' => [
+
+        'images' => [
+            'driver' => 'local',
+            'root' => storage_path('app/private/images'),
+            'visibility' => 'private',
+            'throw' => true,
+        ],
 
         'local' => [
             'driver' => 'local',
