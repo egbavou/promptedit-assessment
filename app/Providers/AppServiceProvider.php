@@ -1,7 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Providers;
 
+use App\Pixelforge\PixelforgeClient;
+use App\Pixelforge\PricingRepository;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
@@ -15,7 +19,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->singleton(PricingRepository::class);
+
+        $this->app->singleton(PixelforgeClient::class, fn (): PixelforgeClient => new PixelforgeClient(
+            key: (string) config('services.pixelforge.key'),
+            baseUrl: (string) config('services.pixelforge.base_url'),
+        ));
     }
 
     /**

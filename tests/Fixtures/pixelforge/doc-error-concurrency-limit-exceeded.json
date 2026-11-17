@@ -1,0 +1,7 @@
+{
+    "error": {
+        "type": "rate_limit_error",
+        "code": "concurrency_limit_exceeded",
+        "message": "Too many generations queued or processing. Retry-After: 5. Retry once one finishes."
+    }
+}

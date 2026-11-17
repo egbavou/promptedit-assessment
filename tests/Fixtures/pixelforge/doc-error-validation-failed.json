@@ -1,0 +1,13 @@
+{
+    "error": {
+        "type": "invalid_request_error",
+        "code": "validation_failed",
+        "message": "The selected size is invalid.",
+        "param": "size",
+        "errors": {
+            "size": [
+                "The size must be one of: 1024x1024, 1536x1024, 1024x1536."
+            ]
+        }
+    }
+}

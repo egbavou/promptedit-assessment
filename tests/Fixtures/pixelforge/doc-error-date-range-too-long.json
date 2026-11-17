@@ -1,0 +1,7 @@
+{
+    "error": {
+        "type": "invalid_request_error",
+        "code": "date_range_too_long",
+        "message": "The usage date range covers too many days."
+    }
+}

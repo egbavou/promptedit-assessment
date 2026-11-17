@@ -1,0 +1,7 @@
+{
+    "error": {
+        "type": "rate_limit_error",
+        "code": "daily_limit_exceeded",
+        "message": "The daily generation quota (UTC) is used up."
+    }
+}

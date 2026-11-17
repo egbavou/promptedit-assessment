@@ -1,0 +1,7 @@
+{
+    "error": {
+        "type": "idempotency_error",
+        "code": "idempotency_key_reused",
+        "message": "The Idempotency-Key was already used with different parameters."
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "error": {
+        "type": "invalid_request_error",
+        "code": "not_found",
+        "message": "No such resource, or it belongs to another account (you can't tell which)."
+    }
+}

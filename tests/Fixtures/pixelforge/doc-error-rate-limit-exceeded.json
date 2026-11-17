@@ -1,0 +1,7 @@
+{
+    "error": {
+        "type": "rate_limit_error",
+        "code": "rate_limit_exceeded",
+        "message": "Too many requests this minute. Wait for the seconds in the Retry-After header."
+    }
+}
