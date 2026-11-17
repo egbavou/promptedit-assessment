@@ -1,0 +1,21 @@
+services:
+    pgsql:
+        image: postgres:17
+        ports:
+            - '54329:5432'
+        environment:
+            POSTGRES_USER: promptedit
+            POSTGRES_PASSWORD: secret
+            POSTGRES_DB: promptedit
+        volumes:
+            - pgsql_data:/var/lib/postgresql/data
+            - ./docker/pgsql/init-test-database.sql:/docker-entrypoint-initdb.d/init-test-database.sql:ro
+        healthcheck:
+            test: ['CMD-SHELL', 'pg_isready -U promptedit -d promptedit']
+            interval: 5s
+            timeout: 5s
+            retries: 10
+            start_period: 5s
+
+volumes:
+    pgsql_data:
