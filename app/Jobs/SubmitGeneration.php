@@ -24,6 +24,8 @@ class SubmitGeneration implements ShouldQueue
 {
     use Queueable;
 
+    public int $timeout = 60;
+
     private CarbonImmutable $retryDeadline;
 
     public function __construct(public string $generationId)
@@ -122,7 +124,7 @@ class SubmitGeneration implements ShouldQueue
         if ($generation->submit_attempts >= 6) {
             $this->settlePending(FailureReason::ProviderBusy, $settle);
         } elseif ($generation->refresh()->status === GenerationStatus::Pending) {
-            $this->release($delay);
+            $this->release(min(900, max(0, $delay)));
         }
     }
 

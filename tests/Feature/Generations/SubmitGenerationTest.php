@@ -80,6 +80,17 @@ class SubmitGenerationTest extends PipelineTestCase
         return [['rate_limit_exceeded', 17], ['concurrency_limit_exceeded', 5], ['rate_limit_exceeded', null]];
     }
 
+    public function test_retry_after_cannot_exceed_the_cloud_standard_queue_delay_limit(): void
+    {
+        $generation = $this->heldGeneration();
+        Http::fake([self::BASE_URL.'/generations' => Http::response(
+            self::fixture('error-rate-limit-exceeded'), 429, ['Retry-After' => '1800'],
+        )]);
+
+        $this->runJob($generation)->assertReleased(900);
+        $this->assertSame(GenerationStatus::Pending, $generation->refresh()->status);
+    }
+
     #[DataProvider('refusals')]
     public function test_refusals_release_the_hold_without_retrying(int $status, string $code, string $reason, string $message): void
     {

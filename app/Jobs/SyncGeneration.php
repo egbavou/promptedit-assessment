@@ -20,6 +20,8 @@ class SyncGeneration implements ShouldQueue
 
     public int $tries = 3;
 
+    public int $timeout = 60;
+
     public function __construct(public string $generationId, public int $sequence = 0) {}
 
     public function handle(PixelforgeClient $client, ApplyGenerationSnapshot $apply): void
