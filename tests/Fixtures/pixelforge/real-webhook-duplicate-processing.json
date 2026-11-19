@@ -1,0 +1,54 @@
+{
+    "event": {
+        "id": "evt_01M7RN4ZF2Y38PGNEQN8XHECHB",
+        "data": {
+            "object": {
+                "id": "gen_01M7RN4XEANKH2EN4E3M2X19AF",
+                "size": "1024x1024",
+                "error": null,
+                "rates": {
+                    "output_tokens": "40.00",
+                    "reasoning_tokens": "12.50",
+                    "input_text_tokens": "5.00",
+                    "input_image_tokens": "10.00"
+                },
+                "usage": null,
+                "object": "generation",
+                "prompt": "An abstract blue garden [duplicate]",
+                "status": "processing",
+                "quality": "low",
+                "metadata": {
+                    "user_id": "39",
+                    "generation_id": "01a1f152-7153-71e3-86e8-3a19b66beaac"
+                },
+                "image_url": null,
+                "created_at": "2026-11-19T01:01:15Z",
+                "started_at": "2026-11-19T01:01:17Z",
+                "completed_at": null,
+                "reference_images": [],
+                "image_url_expires_at": null
+            }
+        },
+        "type": "generation.processing",
+        "object": "event",
+        "created_at": "2026-11-19T01:01:17Z"
+    },
+    "deliveries": [
+        {
+            "event_id": ["evt_01M7RN4ZF2Y38PGNEQN8XHECHB"],
+            "type": ["generation.processing"],
+            "attempt": ["1"],
+            "status": "204 No Content",
+            "status_code": 204,
+            "start": "2026-11-19T02:01:22+01:00"
+        },
+        {
+            "event_id": ["evt_01M7RN4ZF2Y38PGNEQN8XHECHB"],
+            "type": ["generation.processing"],
+            "attempt": ["1"],
+            "status": "204 No Content",
+            "status_code": 204,
+            "start": "2026-11-19T02:01:17+01:00"
+        }
+    ]
+}

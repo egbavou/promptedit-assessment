@@ -1,0 +1,180 @@
+{
+    "status": 200,
+    "headers": {
+        "Content-Type": "application/json",
+        "X-RateLimit-Limit": "60",
+        "X-RateLimit-Remaining": "57"
+    },
+    "body": {
+        "object": "list",
+        "data": [
+            {
+                "id": "gen_01M7RN4XEANKH2EN4E3M2X19AF",
+                "object": "generation",
+                "status": "processing",
+                "prompt": "An abstract blue garden [duplicate]",
+                "size": "1024x1024",
+                "quality": "low",
+                "reference_images": [],
+                "metadata": {
+                    "generation_id": "01a1f152-7153-71e3-86e8-3a19b66beaac",
+                    "user_id": "39"
+                },
+                "image_url": null,
+                "image_url_expires_at": null,
+                "usage": null,
+                "rates": {
+                    "input_text_tokens": "5.00",
+                    "input_image_tokens": "10.00",
+                    "output_tokens": "40.00",
+                    "reasoning_tokens": "12.50"
+                },
+                "error": null,
+                "created_at": "2026-11-19T01:01:15Z",
+                "started_at": "2026-11-19T01:01:17Z",
+                "completed_at": null
+            },
+            {
+                "id": "gen_01M7RN4S1WQ31Y6SXH61M81FB8",
+                "object": "generation",
+                "status": "processing",
+                "prompt": "A quiet mountain lake [slow]",
+                "size": "1024x1024",
+                "quality": "low",
+                "reference_images": [],
+                "metadata": {
+                    "generation_id": "01a1f152-5dbf-7672-9556-ed3ba92ffdee",
+                    "user_id": "39"
+                },
+                "image_url": null,
+                "image_url_expires_at": null,
+                "usage": null,
+                "rates": {
+                    "input_text_tokens": "5.00",
+                    "input_image_tokens": "10.00",
+                    "output_tokens": "40.00",
+                    "reasoning_tokens": "12.50"
+                },
+                "error": null,
+                "created_at": "2026-11-19T01:01:11Z",
+                "started_at": "2026-11-19T01:01:12Z",
+                "completed_at": null
+            },
+            {
+                "id": "gen_01M7RN4NGKMHTCQGHMR7SWS9BH",
+                "object": "generation",
+                "status": "processing",
+                "prompt": "A lighthouse in a storm [fail]",
+                "size": "1024x1024",
+                "quality": "low",
+                "reference_images": [],
+                "metadata": {
+                    "generation_id": "01a1f152-4a1b-741c-aad5-d1b099ae4f77",
+                    "user_id": "39"
+                },
+                "image_url": null,
+                "image_url_expires_at": null,
+                "usage": null,
+                "rates": {
+                    "input_text_tokens": "5.00",
+                    "input_image_tokens": "10.00",
+                    "output_tokens": "40.00",
+                    "reasoning_tokens": "12.50"
+                },
+                "error": null,
+                "created_at": "2026-11-19T01:01:07Z",
+                "started_at": "2026-11-19T01:01:08Z",
+                "completed_at": null
+            },
+            {
+                "id": "gen_01M7RN4F0PGABFVXQS51N33868",
+                "object": "generation",
+                "status": "succeeded",
+                "prompt": "A lighthouse at dawn [succeed]",
+                "size": "1024x1024",
+                "quality": "medium",
+                "reference_images": [],
+                "metadata": {
+                    "generation_id": "01a1f152-364a-72c4-ba4f-83892a20ce87",
+                    "user_id": "39"
+                },
+                "image_url": "https://pixelforge.promptedit.dev/images/gen_01M7RN4F0PGABFVXQS51N33868.png?expires=1795136469&signature=f35dae4c710e3c8609068cc870e5cec00130d5d37ae420fa4e7d1a3db08540ec",
+                "image_url_expires_at": "2026-11-20T01:01:09Z",
+                "usage": {
+                    "input_text_tokens": 9,
+                    "input_image_tokens": 0,
+                    "output_tokens": 1100,
+                    "reasoning_tokens": 1759,
+                    "total_tokens": 2868
+                },
+                "rates": {
+                    "input_text_tokens": "5.00",
+                    "input_image_tokens": "10.00",
+                    "output_tokens": "40.00",
+                    "reasoning_tokens": "12.50"
+                },
+                "error": null,
+                "created_at": "2026-11-19T01:01:00Z",
+                "started_at": "2026-11-19T01:01:01Z",
+                "completed_at": "2026-11-19T01:01:09Z"
+            },
+            {
+                "id": "gen_01M7RN49X389QDET6SMYHW9B14",
+                "object": "generation",
+                "status": "failed",
+                "prompt": "Fixture capture: a lighthouse [fail]",
+                "size": "1024x1024",
+                "quality": "low",
+                "reference_images": [],
+                "metadata": {},
+                "image_url": null,
+                "image_url_expires_at": null,
+                "usage": null,
+                "rates": {
+                    "input_text_tokens": "5.00",
+                    "input_image_tokens": "10.00",
+                    "output_tokens": "40.00",
+                    "reasoning_tokens": "12.50"
+                },
+                "error": {
+                    "code": "generation_failed",
+                    "message": "The model could not produce an image for this prompt. You were not charged."
+                },
+                "created_at": "2026-11-19T01:00:55Z",
+                "started_at": "2026-11-19T01:00:56Z",
+                "completed_at": "2026-11-19T01:01:00Z"
+            },
+            {
+                "id": "gen_01M7RN35263XC7ANXGW8VSJDSE",
+                "object": "generation",
+                "status": "succeeded",
+                "prompt": "Fixture capture: a lighthouse [succeed]",
+                "size": "1024x1024",
+                "quality": "low",
+                "reference_images": [],
+                "metadata": {},
+                "image_url": "https://pixelforge.promptedit.dev/images/gen_01M7RN35263XC7ANXGW8VSJDSE.png?expires=1795136442&signature=8c284bd36f95789de989d0b6c06d2e796692cdf548bc52f1a6ce893ef0fd32bc",
+                "image_url_expires_at": "2026-11-20T01:00:42Z",
+                "usage": {
+                    "input_text_tokens": 9,
+                    "input_image_tokens": 0,
+                    "output_tokens": 280,
+                    "reasoning_tokens": 476,
+                    "total_tokens": 765
+                },
+                "rates": {
+                    "input_text_tokens": "5.00",
+                    "input_image_tokens": "10.00",
+                    "output_tokens": "40.00",
+                    "reasoning_tokens": "12.50"
+                },
+                "error": null,
+                "created_at": "2026-11-19T01:00:17Z",
+                "started_at": "2026-11-19T01:00:18Z",
+                "completed_at": "2026-11-19T01:00:42Z"
+            }
+        ],
+        "has_more": false,
+        "next_cursor": null
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "status": 503,
+    "headers": {
+        "Content-Type": "application/json",
+        "Retry-After": "2",
+        "X-RateLimit-Limit": "60",
+        "X-RateLimit-Remaining": "59"
+    },
+    "body": {
+        "error": {
+            "type": "api_error",
+            "code": "overloaded",
+            "message": "Pixelforge is temporarily overloaded. Nothing was created; please retry shortly."
+        }
+    }
+}

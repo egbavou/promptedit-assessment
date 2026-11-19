@@ -64,6 +64,27 @@ final readonly class PixelforgeClient
      */
     private function request(string $method, string $path, array $options = [], array $headers = [], bool $authenticated = true): Response
     {
+        $response = $this->rawRequest($method, $path, $options, $headers, $authenticated);
+
+        if (! $response->successful()) {
+            throw PixelforgeRequestFailed::fromResponse($response);
+        }
+
+        if (! json_decode($response->body()) instanceof stdClass) {
+            throw new InvalidPixelforgePayload('The Pixelforge response must be a JSON object.');
+        }
+
+        return $response;
+    }
+
+    /**
+     * Capture provider responses before payload validation or error mapping.
+     *
+     * @param  array<string, mixed>  $options
+     * @param  array<string, string>  $headers
+     */
+    public function rawRequest(string $method, string $path, array $options = [], array $headers = [], bool $authenticated = true): Response
+    {
         $request = Http::timeout(15)
             ->connectTimeout(5)
             ->acceptJson()
@@ -78,14 +99,6 @@ final readonly class PixelforgeClient
             $response = $request->send($method, rtrim($this->baseUrl, '/').$path, $options);
         } catch (ConnectionException $exception) {
             throw new PixelforgeUnreachable($exception);
-        }
-
-        if (! $response->successful()) {
-            throw PixelforgeRequestFailed::fromResponse($response);
-        }
-
-        if (! json_decode($response->body()) instanceof stdClass) {
-            throw new InvalidPixelforgePayload('The Pixelforge response must be a JSON object.');
         }
 
         return $response;

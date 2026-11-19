@@ -1,0 +1,15 @@
+{
+    "status": 400,
+    "headers": {
+        "Content-Type": "application/json",
+        "X-RateLimit-Limit": "60",
+        "X-RateLimit-Remaining": "50"
+    },
+    "body": {
+        "error": {
+            "type": "invalid_request_error",
+            "code": "content_policy_violation",
+            "message": "Your prompt was rejected by our content policy. You were not charged."
+        }
+    }
+}

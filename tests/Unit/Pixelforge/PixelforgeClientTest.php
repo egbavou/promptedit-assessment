@@ -18,6 +18,21 @@ use PHPUnit\Framework\Attributes\DataProvider;
 
 class PixelforgeClientTest extends PixelforgeTestCase
 {
+    public function test_raw_request_preserves_error_bodies_status_and_headers_without_retrying(): void
+    {
+        $body = self::fixture('error-overloaded');
+        Http::fake(['*' => Http::response($body, 503, ['Retry-After' => '2'])]);
+
+        $response = $this->client()->rawRequest('POST', '/generations', ['json' => ['prompt' => '[overloaded]']], ['Idempotency-Key' => 'capture-test']);
+
+        $this->assertSame(503, $response->status());
+        $this->assertSame($body, $response->json());
+        $this->assertSame('2', $response->header('Retry-After'));
+        Http::assertSentCount(1);
+        Http::assertSent(fn (Request $request): bool => $request->hasHeader('Authorization', 'Bearer test-api-key')
+            && $request->hasHeader('Idempotency-Key', 'capture-test'));
+    }
+
     public function test_create_sends_only_documented_parameters_as_json_with_authentication_and_idempotency(): void
     {
         $fixture = self::fixture('generation-queued');

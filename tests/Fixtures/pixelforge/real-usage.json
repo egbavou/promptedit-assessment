@@ -1,0 +1,32 @@
+{
+    "status": 200,
+    "headers": {
+        "Content-Type": "application/json",
+        "X-RateLimit-Limit": "60",
+        "X-RateLimit-Remaining": "58"
+    },
+    "body": {
+        "object": "usage",
+        "start_date": "2026-11-19",
+        "end_date": "2026-11-19",
+        "data": [
+            {
+                "date": "2026-11-19",
+                "generations": 2,
+                "input_text_tokens": 18,
+                "input_image_tokens": 0,
+                "output_tokens": 1380,
+                "reasoning_tokens": 2235,
+                "cost_usd": "0.083227500"
+            }
+        ],
+        "total": {
+            "generations": 2,
+            "input_text_tokens": 18,
+            "input_image_tokens": 0,
+            "output_tokens": 1380,
+            "reasoning_tokens": 2235,
+            "cost_usd": "0.083227500"
+        }
+    }
+}

@@ -1,0 +1,60 @@
+{
+    "event": {
+        "id": "evt_01M7RN5QKW02FXNDQZ4QH1D4A1",
+        "data": {
+            "object": {
+                "id": "gen_01M7RN4XEANKH2EN4E3M2X19AF",
+                "size": "1024x1024",
+                "error": null,
+                "rates": {
+                    "output_tokens": "40.00",
+                    "reasoning_tokens": "12.50",
+                    "input_text_tokens": "5.00",
+                    "input_image_tokens": "10.00"
+                },
+                "usage": {
+                    "total_tokens": 631,
+                    "output_tokens": 280,
+                    "reasoning_tokens": 342,
+                    "input_text_tokens": 9,
+                    "input_image_tokens": 0
+                },
+                "object": "generation",
+                "prompt": "An abstract blue garden [duplicate]",
+                "status": "succeeded",
+                "quality": "low",
+                "metadata": {
+                    "user_id": "39",
+                    "generation_id": "01a1f152-7153-71e3-86e8-3a19b66beaac"
+                },
+                "image_url": "https://pixelforge.promptedit.dev/images/gen_01M7RN4XEANKH2EN4E3M2X19AF.png?expires=1795136502&signature=6d87621261d9a7318df0c372f3f96f1602ce92958e2808709947d919e96c8f96",
+                "created_at": "2026-11-19T01:01:15Z",
+                "started_at": "2026-11-19T01:01:17Z",
+                "completed_at": "2026-11-19T01:01:42Z",
+                "reference_images": [],
+                "image_url_expires_at": "2026-11-20T01:01:42Z"
+            }
+        },
+        "type": "generation.succeeded",
+        "object": "event",
+        "created_at": "2026-11-19T01:01:42Z"
+    },
+    "deliveries": [
+        {
+            "event_id": ["evt_01M7RN5QKW02FXNDQZ4QH1D4A1"],
+            "type": ["generation.succeeded"],
+            "attempt": ["1"],
+            "status": "204 No Content",
+            "status_code": 204,
+            "start": "2026-11-19T02:01:46+01:00"
+        },
+        {
+            "event_id": ["evt_01M7RN5QKW02FXNDQZ4QH1D4A1"],
+            "type": ["generation.succeeded"],
+            "attempt": ["1"],
+            "status": "204 No Content",
+            "status_code": 204,
+            "start": "2026-11-19T02:01:42+01:00"
+        }
+    ]
+}
