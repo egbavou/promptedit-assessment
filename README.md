@@ -98,6 +98,8 @@ php artisan queue:work --timeout=60
 
 For frontend development, run `npm run dev` separately. Images default to `storage/app/private/images` and need no public storage symlink.
 
+To capture real provider responses with the configured local key, run `php artisan app:capture-pixelforge-fixtures`. The command refuses every environment except `local`, creates two low-quality generations, polls every ten seconds, and writes sanitized response bodies, HTTP statuses and selected headers to `tests/Fixtures/pixelforge/real-*.json`. It also captures pricing, blocked/overloaded refusals, usage and a generation list. These direct API captures consume quota and their successful generation contributes to provider usage; account for it separately when reconciling app records. See [the live acceptance evidence](docs/live-acceptance-2026-11-19.md) for the verified run.
+
 For an offline demo, run `php artisan db:seed --class=DemoSeeder` and sign in as `demo@example.com` using `DEMO_PASSWORD` (local default: `password`). This repeatable local-only seeder adds $5, one sample in every status and a bundled image without provider calls or queued jobs; its pending samples intentionally stay pending. It seeds documented pricing only as a missing last-known fallback, leaving live pricing untouched.
 
 ### Operator account

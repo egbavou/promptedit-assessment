@@ -1,0 +1,679 @@
+{
+    "date_utc": "2026-11-19",
+    "provider_generations_created": 8,
+    "provider_create_requests_including_rejections": 17,
+    "acceptance": [
+        {
+            "case": "succeed",
+            "generation_id": "01a1f152-364a-72c4-ba4f-83892a20ce87",
+            "provider_id": "gen_01M7RN4F0PGABFVXQS51N33868",
+            "status": "succeeded",
+            "failure_reason": null,
+            "submit_attempts": 1,
+            "size": "1024x1024",
+            "quality": "medium",
+            "reference_images": [],
+            "usage": {
+                "total_tokens": 2868,
+                "output_tokens": 1100,
+                "reasoning_tokens": 1759,
+                "input_text_tokens": 9,
+                "input_image_tokens": 0
+            },
+            "rates": {
+                "output_tokens": "40.00",
+                "reasoning_tokens": "12.50",
+                "input_text_tokens": "5.00",
+                "input_image_tokens": "10.00"
+            },
+            "cost_usd": "0.066032500",
+            "arithmetic": [
+                "9 \u00d7 5.00/1,000,000 = 0.000045000",
+                "0 \u00d7 10.00/1,000,000 = 0.000000000",
+                "1100 \u00d7 40.00/1,000,000 = 0.044000000",
+                "1759 \u00d7 12.50/1,000,000 = 0.021987500"
+            ],
+            "expected_price_nanodollars": 82600000,
+            "charged_nanodollars": 82600000,
+            "ledger": [
+                {
+                    "id": 21,
+                    "type": "hold",
+                    "amount_nanodollars": -86400000
+                },
+                {
+                    "id": 24,
+                    "type": "hold_release",
+                    "amount_nanodollars": 86400000
+                },
+                {
+                    "id": 25,
+                    "type": "charge",
+                    "amount_nanodollars": -82600000
+                }
+            ],
+            "events": [
+                {
+                    "id": "evt_01M7RN4G2EEPD5B45EAECJKBGE",
+                    "type": "generation.processing",
+                    "received_at": "2026-11-19T01:01:02+00:00",
+                    "deliveries": [
+                        {
+                            "event_id": ["evt_01M7RN4G2EEPD5B45EAECJKBGE"],
+                            "type": ["generation.processing"],
+                            "attempt": ["1"],
+                            "status": "204 No Content",
+                            "status_code": 204,
+                            "start": "2026-11-19T02:01:02+01:00"
+                        }
+                    ]
+                },
+                {
+                    "id": "evt_01M7RN4Q68A6J2XASYGCG8PFYP",
+                    "type": "generation.succeeded",
+                    "received_at": "2026-11-19T01:01:09+00:00",
+                    "deliveries": [
+                        {
+                            "event_id": ["evt_01M7RN4Q68A6J2XASYGCG8PFYP"],
+                            "type": ["generation.succeeded"],
+                            "attempt": ["1"],
+                            "status": "204 No Content",
+                            "status_code": 204,
+                            "start": "2026-11-19T02:01:09+01:00"
+                        }
+                    ]
+                }
+            ],
+            "started_at": "2026-11-19T01:01:01+00:00",
+            "completed_at": "2026-11-19T01:01:09+00:00",
+            "image_path": "generations/01a1f152-364a-72c4-ba4f-83892a20ce87.png",
+            "private_png_verified": true
+        },
+        {
+            "case": "fail",
+            "generation_id": "01a1f152-4a1b-741c-aad5-d1b099ae4f77",
+            "provider_id": "gen_01M7RN4NGKMHTCQGHMR7SWS9BH",
+            "status": "failed",
+            "failure_reason": "generation_failed",
+            "submit_attempts": 1,
+            "size": "1024x1024",
+            "quality": "low",
+            "reference_images": [],
+            "usage": null,
+            "rates": {
+                "output_tokens": "40.00",
+                "reasoning_tokens": "12.50",
+                "input_text_tokens": "5.00",
+                "input_image_tokens": "10.00"
+            },
+            "cost_usd": "0.000000000",
+            "arithmetic": [],
+            "expected_price_nanodollars": 0,
+            "charged_nanodollars": 0,
+            "ledger": [
+                {
+                    "id": 22,
+                    "type": "hold",
+                    "amount_nanodollars": -21900000
+                },
+                {
+                    "id": 31,
+                    "type": "hold_release",
+                    "amount_nanodollars": 21900000
+                }
+            ],
+            "events": [
+                {
+                    "id": "evt_01M7RN4PKKFST3GQPGH9ANF209",
+                    "type": "generation.processing",
+                    "received_at": "2026-11-19T01:01:08+00:00",
+                    "deliveries": [
+                        {
+                            "event_id": ["evt_01M7RN4PKKFST3GQPGH9ANF209"],
+                            "type": ["generation.processing"],
+                            "attempt": ["1"],
+                            "status": "204 No Content",
+                            "status_code": 204,
+                            "start": "2026-11-19T02:01:08+01:00"
+                        }
+                    ]
+                },
+                {
+                    "id": "evt_01M7RN5G2M9N8AJ0816P1J0CD1",
+                    "type": "generation.failed",
+                    "received_at": "2026-11-19T01:01:35+00:00",
+                    "deliveries": [
+                        {
+                            "event_id": ["evt_01M7RN5G2M9N8AJ0816P1J0CD1"],
+                            "type": ["generation.failed"],
+                            "attempt": ["1"],
+                            "status": "204 No Content",
+                            "status_code": 204,
+                            "start": "2026-11-19T02:01:34+01:00"
+                        }
+                    ]
+                }
+            ],
+            "started_at": "2026-11-19T01:01:08+00:00",
+            "completed_at": "2026-11-19T01:01:34+00:00",
+            "image_path": null,
+            "private_png_verified": false
+        },
+        {
+            "case": "slow",
+            "generation_id": "01a1f152-5dbf-7672-9556-ed3ba92ffdee",
+            "provider_id": "gen_01M7RN4S1WQ31Y6SXH61M81FB8",
+            "status": "succeeded",
+            "failure_reason": null,
+            "submit_attempts": 1,
+            "size": "1024x1024",
+            "quality": "low",
+            "reference_images": [],
+            "usage": {
+                "total_tokens": 432,
+                "output_tokens": 280,
+                "reasoning_tokens": 146,
+                "input_text_tokens": 6,
+                "input_image_tokens": 0
+            },
+            "rates": {
+                "output_tokens": "40.00",
+                "reasoning_tokens": "12.50",
+                "input_text_tokens": "5.00",
+                "input_image_tokens": "10.00"
+            },
+            "cost_usd": "0.013055000",
+            "arithmetic": [
+                "6 \u00d7 5.00/1,000,000 = 0.000030000",
+                "0 \u00d7 10.00/1,000,000 = 0.000000000",
+                "280 \u00d7 40.00/1,000,000 = 0.011200000",
+                "146 \u00d7 12.50/1,000,000 = 0.001825000"
+            ],
+            "expected_price_nanodollars": 16400000,
+            "charged_nanodollars": 16400000,
+            "ledger": [
+                {
+                    "id": 23,
+                    "type": "hold",
+                    "amount_nanodollars": -21900000
+                },
+                {
+                    "id": 39,
+                    "type": "hold_release",
+                    "amount_nanodollars": 21900000
+                },
+                {
+                    "id": 40,
+                    "type": "charge",
+                    "amount_nanodollars": -16400000
+                }
+            ],
+            "events": [
+                {
+                    "id": "evt_01M7RN4T5MXSCKHGE2CBKKR7V9",
+                    "type": "generation.processing",
+                    "received_at": "2026-11-19T01:01:12+00:00",
+                    "deliveries": [
+                        {
+                            "event_id": ["evt_01M7RN4T5MXSCKHGE2CBKKR7V9"],
+                            "type": ["generation.processing"],
+                            "attempt": ["1"],
+                            "status": "204 No Content",
+                            "status_code": 204,
+                            "start": "2026-11-19T02:01:12+01:00"
+                        }
+                    ]
+                },
+                {
+                    "id": "evt_01M7RN6MVD0XCKEWR40T2NBY0H",
+                    "type": "generation.succeeded",
+                    "received_at": "2026-11-19T01:02:12+00:00",
+                    "deliveries": [
+                        {
+                            "event_id": ["evt_01M7RN6MVD0XCKEWR40T2NBY0H"],
+                            "type": ["generation.succeeded"],
+                            "attempt": ["1"],
+                            "status": "204 No Content",
+                            "status_code": 204,
+                            "start": "2026-11-19T02:02:12+01:00"
+                        }
+                    ]
+                }
+            ],
+            "started_at": "2026-11-19T01:01:12+00:00",
+            "completed_at": "2026-11-19T01:02:12+00:00",
+            "image_path": "generations/01a1f152-5dbf-7672-9556-ed3ba92ffdee.png",
+            "private_png_verified": true
+        },
+        {
+            "case": "duplicate",
+            "generation_id": "01a1f152-7153-71e3-86e8-3a19b66beaac",
+            "provider_id": "gen_01M7RN4XEANKH2EN4E3M2X19AF",
+            "status": "succeeded",
+            "failure_reason": null,
+            "submit_attempts": 1,
+            "size": "1024x1024",
+            "quality": "low",
+            "reference_images": [],
+            "usage": {
+                "total_tokens": 631,
+                "output_tokens": 280,
+                "reasoning_tokens": 342,
+                "input_text_tokens": 9,
+                "input_image_tokens": 0
+            },
+            "rates": {
+                "output_tokens": "40.00",
+                "reasoning_tokens": "12.50",
+                "input_text_tokens": "5.00",
+                "input_image_tokens": "10.00"
+            },
+            "cost_usd": "0.015520000",
+            "arithmetic": [
+                "9 \u00d7 5.00/1,000,000 = 0.000045000",
+                "0 \u00d7 10.00/1,000,000 = 0.000000000",
+                "280 \u00d7 40.00/1,000,000 = 0.011200000",
+                "342 \u00d7 12.50/1,000,000 = 0.004275000"
+            ],
+            "expected_price_nanodollars": 19400000,
+            "charged_nanodollars": 19400000,
+            "ledger": [
+                {
+                    "id": 26,
+                    "type": "hold",
+                    "amount_nanodollars": -21900000
+                },
+                {
+                    "id": 33,
+                    "type": "hold_release",
+                    "amount_nanodollars": 21900000
+                },
+                {
+                    "id": 34,
+                    "type": "charge",
+                    "amount_nanodollars": -19400000
+                }
+            ],
+            "events": [
+                {
+                    "id": "evt_01M7RN4ZF2Y38PGNEQN8XHECHB",
+                    "type": "generation.processing",
+                    "received_at": "2026-11-19T01:01:17+00:00",
+                    "deliveries": [
+                        {
+                            "event_id": ["evt_01M7RN4ZF2Y38PGNEQN8XHECHB"],
+                            "type": ["generation.processing"],
+                            "attempt": ["1"],
+                            "status": "204 No Content",
+                            "status_code": 204,
+                            "start": "2026-11-19T02:01:22+01:00"
+                        },
+                        {
+                            "event_id": ["evt_01M7RN4ZF2Y38PGNEQN8XHECHB"],
+                            "type": ["generation.processing"],
+                            "attempt": ["1"],
+                            "status": "204 No Content",
+                            "status_code": 204,
+                            "start": "2026-11-19T02:01:17+01:00"
+                        }
+                    ]
+                },
+                {
+                    "id": "evt_01M7RN5QKW02FXNDQZ4QH1D4A1",
+                    "type": "generation.succeeded",
+                    "received_at": "2026-11-19T01:01:42+00:00",
+                    "deliveries": [
+                        {
+                            "event_id": ["evt_01M7RN5QKW02FXNDQZ4QH1D4A1"],
+                            "type": ["generation.succeeded"],
+                            "attempt": ["1"],
+                            "status": "204 No Content",
+                            "status_code": 204,
+                            "start": "2026-11-19T02:01:46+01:00"
+                        },
+                        {
+                            "event_id": ["evt_01M7RN5QKW02FXNDQZ4QH1D4A1"],
+                            "type": ["generation.succeeded"],
+                            "attempt": ["1"],
+                            "status": "204 No Content",
+                            "status_code": 204,
+                            "start": "2026-11-19T02:01:42+01:00"
+                        }
+                    ]
+                }
+            ],
+            "started_at": "2026-11-19T01:01:17+00:00",
+            "completed_at": "2026-11-19T01:01:42+00:00",
+            "image_path": "generations/01a1f152-7153-71e3-86e8-3a19b66beaac.png",
+            "private_png_verified": true
+        },
+        {
+            "case": "overloaded",
+            "generation_id": "01a1f152-8505-7241-9f63-2aee7be267fa",
+            "provider_id": null,
+            "status": "failed",
+            "failure_reason": "provider_busy",
+            "submit_attempts": 6,
+            "size": "1024x1024",
+            "quality": "low",
+            "reference_images": [],
+            "usage": null,
+            "rates": null,
+            "cost_usd": "0.000000000",
+            "arithmetic": [],
+            "expected_price_nanodollars": 0,
+            "charged_nanodollars": 0,
+            "ledger": [
+                {
+                    "id": 27,
+                    "type": "hold",
+                    "amount_nanodollars": -21900000
+                },
+                {
+                    "id": 47,
+                    "type": "hold_release",
+                    "amount_nanodollars": 21900000
+                }
+            ],
+            "events": [],
+            "started_at": null,
+            "completed_at": null,
+            "image_path": null,
+            "private_png_verified": false
+        },
+        {
+            "case": "blocked",
+            "generation_id": "01a1f152-98cf-7eb4-b601-8fcdd06a98c9",
+            "provider_id": null,
+            "status": "failed",
+            "failure_reason": "prompt_rejected",
+            "submit_attempts": 1,
+            "size": "1024x1024",
+            "quality": "low",
+            "reference_images": [],
+            "usage": null,
+            "rates": null,
+            "cost_usd": "0.000000000",
+            "arithmetic": [],
+            "expected_price_nanodollars": 0,
+            "charged_nanodollars": 0,
+            "ledger": [
+                {
+                    "id": 28,
+                    "type": "hold",
+                    "amount_nanodollars": -21900000
+                },
+                {
+                    "id": 32,
+                    "type": "hold_release",
+                    "amount_nanodollars": 21900000
+                }
+            ],
+            "events": [],
+            "started_at": null,
+            "completed_at": null,
+            "image_path": null,
+            "private_png_verified": false
+        },
+        {
+            "case": "plain-reference",
+            "generation_id": "01a1f152-ac65-726a-9a19-f8dc1ef3eab7",
+            "provider_id": "gen_01M7RN5KW4YYNW1GFF5RSFV8WK",
+            "status": "succeeded",
+            "failure_reason": null,
+            "submit_attempts": 1,
+            "size": "1536x1024",
+            "quality": "medium",
+            "reference_images": ["https://example.com/style.png"],
+            "usage": {
+                "total_tokens": 3133,
+                "output_tokens": 1650,
+                "reasoning_tokens": 706,
+                "input_text_tokens": 12,
+                "input_image_tokens": 765
+            },
+            "rates": {
+                "output_tokens": "40.00",
+                "reasoning_tokens": "12.50",
+                "input_text_tokens": "5.00",
+                "input_image_tokens": "10.00"
+            },
+            "cost_usd": "0.082535000",
+            "arithmetic": [
+                "12 \u00d7 5.00/1,000,000 = 0.000060000",
+                "765 \u00d7 10.00/1,000,000 = 0.007650000",
+                "1650 \u00d7 40.00/1,000,000 = 0.066000000",
+                "706 \u00d7 12.50/1,000,000 = 0.008825000"
+            ],
+            "expected_price_nanodollars": 103200000,
+            "charged_nanodollars": 103200000,
+            "ledger": [
+                {
+                    "id": 29,
+                    "type": "hold",
+                    "amount_nanodollars": -123500000
+                },
+                {
+                    "id": 35,
+                    "type": "hold_release",
+                    "amount_nanodollars": 123500000
+                },
+                {
+                    "id": 36,
+                    "type": "charge",
+                    "amount_nanodollars": -103200000
+                }
+            ],
+            "events": [
+                {
+                    "id": "evt_01M7RN5PW1M2SEQK072JS6PHF4",
+                    "type": "generation.processing",
+                    "received_at": "2026-11-19T01:01:42+00:00",
+                    "deliveries": [
+                        {
+                            "event_id": ["evt_01M7RN5PW1M2SEQK072JS6PHF4"],
+                            "type": ["generation.processing"],
+                            "attempt": ["1"],
+                            "status": "204 No Content",
+                            "status_code": 204,
+                            "start": "2026-11-19T02:01:41+01:00"
+                        }
+                    ]
+                },
+                {
+                    "id": "evt_01M7RN64KY9H7NJ5GCYVF1YXR4",
+                    "type": "generation.succeeded",
+                    "received_at": "2026-11-19T01:01:56+00:00",
+                    "deliveries": [
+                        {
+                            "event_id": ["evt_01M7RN64KY9H7NJ5GCYVF1YXR4"],
+                            "type": ["generation.succeeded"],
+                            "attempt": ["1"],
+                            "status": "204 No Content",
+                            "status_code": 204,
+                            "start": "2026-11-19T02:01:56+01:00"
+                        }
+                    ]
+                }
+            ],
+            "started_at": "2026-11-19T01:01:41+00:00",
+            "completed_at": "2026-11-19T01:01:55+00:00",
+            "image_path": "generations/01a1f152-ac65-726a-9a19-f8dc1ef3eab7.png",
+            "private_png_verified": true
+        },
+        {
+            "case": "plain-high",
+            "generation_id": "01a1f152-c000-7bf3-aad0-abc4bd76925e",
+            "provider_id": "gen_01M7RN5V7XHCJ63BHH912N6SA0",
+            "status": "succeeded",
+            "failure_reason": null,
+            "submit_attempts": 1,
+            "size": "1024x1536",
+            "quality": "high",
+            "reference_images": [],
+            "usage": {
+                "total_tokens": 11482,
+                "output_tokens": 6450,
+                "reasoning_tokens": 5022,
+                "input_text_tokens": 10,
+                "input_image_tokens": 0
+            },
+            "rates": {
+                "output_tokens": "40.00",
+                "reasoning_tokens": "12.50",
+                "input_text_tokens": "5.00",
+                "input_image_tokens": "10.00"
+            },
+            "cost_usd": "0.320825000",
+            "arithmetic": [
+                "10 \u00d7 5.00/1,000,000 = 0.000050000",
+                "0 \u00d7 10.00/1,000,000 = 0.000000000",
+                "6450 \u00d7 40.00/1,000,000 = 0.258000000",
+                "5022 \u00d7 12.50/1,000,000 = 0.062775000"
+            ],
+            "expected_price_nanodollars": 401100000,
+            "charged_nanodollars": 401100000,
+            "ledger": [
+                {
+                    "id": 30,
+                    "type": "hold",
+                    "amount_nanodollars": -447600000
+                },
+                {
+                    "id": 37,
+                    "type": "hold_release",
+                    "amount_nanodollars": 447600000
+                },
+                {
+                    "id": 38,
+                    "type": "charge",
+                    "amount_nanodollars": -401100000
+                }
+            ],
+            "events": [
+                {
+                    "id": "evt_01M7RN5X8NYWN7EMQ8ST3D902A",
+                    "type": "generation.processing",
+                    "received_at": "2026-11-19T01:01:48+00:00",
+                    "deliveries": [
+                        {
+                            "event_id": ["evt_01M7RN5X8NYWN7EMQ8ST3D902A"],
+                            "type": ["generation.processing"],
+                            "attempt": ["1"],
+                            "status": "204 No Content",
+                            "status_code": 204,
+                            "start": "2026-11-19T02:01:48+01:00"
+                        }
+                    ]
+                },
+                {
+                    "id": "evt_01M7RN673R5RS186CKWJNC65P5",
+                    "type": "generation.succeeded",
+                    "received_at": "2026-11-19T01:01:58+00:00",
+                    "deliveries": [
+                        {
+                            "event_id": ["evt_01M7RN673R5RS186CKWJNC65P5"],
+                            "type": ["generation.succeeded"],
+                            "attempt": ["1"],
+                            "status": "204 No Content",
+                            "status_code": 204,
+                            "start": "2026-11-19T02:01:58+01:00"
+                        }
+                    ]
+                }
+            ],
+            "started_at": "2026-11-19T01:01:48+00:00",
+            "completed_at": "2026-11-19T01:01:58+00:00",
+            "image_path": "generations/01a1f152-c000-7bf3-aad0-abc4bd76925e.png",
+            "private_png_verified": true
+        }
+    ],
+    "provider_usage": {
+        "object": "usage",
+        "start_date": "2026-11-19",
+        "end_date": "2026-11-19",
+        "data": [
+            {
+                "date": "2026-11-19",
+                "generations": 6,
+                "input_text_tokens": 55,
+                "input_image_tokens": 765,
+                "output_tokens": 10040,
+                "reasoning_tokens": 8451,
+                "cost_usd": "0.515162500"
+            }
+        ],
+        "total": {
+            "generations": 6,
+            "input_text_tokens": 55,
+            "input_image_tokens": 765,
+            "output_tokens": 10040,
+            "reasoning_tokens": 8451,
+            "cost_usd": "0.515162500"
+        }
+    },
+    "profit_report": {
+        "days": [
+            {
+                "date": "2026-11-19",
+                "generations": 6,
+                "billed_nanodollars": 644200000,
+                "cost_nanodollars": 515162500,
+                "margin_nanodollars": 129037500,
+                "billed": "$0.6442",
+                "cost": "$0.515162500",
+                "margin": "$0.129037500",
+                "pixelforge": {
+                    "generations": 6,
+                    "cost_nanodollars": 515162500,
+                    "cost": "$0.515162500",
+                    "match": true,
+                    "difference_nanodollars": 0,
+                    "difference": "$0.000000000"
+                }
+            }
+        ],
+        "users": [
+            {
+                "id": 40,
+                "name": "Fixture Capture",
+                "email": "fixture-capture@example.test",
+                "generations": 1,
+                "billed_nanodollars": 21500000,
+                "cost_nanodollars": 17195000,
+                "margin_nanodollars": 4305000,
+                "billed": "$0.0215",
+                "cost": "$0.017195000",
+                "margin": "$0.004305000"
+            },
+            {
+                "id": 39,
+                "name": "Live Check",
+                "email": "live-check@example.test",
+                "generations": 5,
+                "billed_nanodollars": 622700000,
+                "cost_nanodollars": 497967500,
+                "margin_nanodollars": 124732500,
+                "billed": "$0.6227",
+                "cost": "$0.497967500",
+                "margin": "$0.124732500"
+            }
+        ],
+        "totals": {
+            "generations": 6,
+            "billed_nanodollars": 644200000,
+            "cost_nanodollars": 515162500,
+            "margin_nanodollars": 129037500,
+            "billed": "$0.6442",
+            "cost": "$0.515162500",
+            "margin": "$0.129037500"
+        },
+        "pixelforge": {
+            "matching_days": 1,
+            "total_days": 1
+        },
+        "message": null
+    },
+    "failed_jobs": 0,
+    "live_user_reserved_nanodollars": 0
+}
