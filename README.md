@@ -2,7 +2,7 @@
 
 Laravel 13, Vue 3 and Inertia app for asynchronous image generation through the simulated [Pixelforge API](https://pixelforge.promptedit.dev/docs). Purchases and images are simulated; no real payments or AI generation occur.
 
-Live app: `https://<app>.laravel.cloud` (replace after deployment). Deployment instructions: [docs/deployment.md](docs/deployment.md).
+Live app: <https://promptedit-assessment-production-zjutmh.laravel.cloud>. Deployment instructions: [docs/deployment.md](docs/deployment.md).
 
 ## Try it in 15 minutes
 
