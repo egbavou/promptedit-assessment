@@ -21,7 +21,7 @@ class LedgerIndexTest extends TestCase
         $ledger = app(Ledger::class);
         $purchase = $ledger->purchase($user, 'purchase', 5_000_000_000);
         $purchase->forceFill(['created_at' => now()->subDay()])->save();
-        $generation = Generation::factory()->for($user)->create();
+        $generation = Generation::factory()->for($user)->create(['prompt' => 'A lighthouse at dawn']);
         $ledger->hold($user, $generation, 86_500_000);
         $ledger->releaseHold($generation);
         $ledger->charge($generation, 74_500_000);
